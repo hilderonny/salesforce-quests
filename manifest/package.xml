@@ -5,7 +5,7 @@
         <name>ApexClass</name>
 	</types>
 	<types>
-		<members>Quests</members>
+		<members>LIAGA</members>
 		<name>CustomApplication</name>
 	</types>
 	<types>
@@ -21,6 +21,11 @@
 	<types>
 		<members>Quests</members>
 		<name>CustomTab</name>
+	</types>
+	<types>
+		<members>LIAGA_UtilityBar</members>
+		<members>Quests</members>
+		<name>FlexiPage</name>
 	</types>
 	<types>
 		<members>questlist</members>

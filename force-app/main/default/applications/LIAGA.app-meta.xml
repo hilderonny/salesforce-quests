@@ -10,9 +10,9 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>true</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
-    <label>Quests</label>
+    <label>LIAGA</label>
     <navType>Standard</navType>
     <tabs>Quests</tabs>
     <uiType>Lightning</uiType>
-    <utilityBar>Quests_UtilityBar</utilityBar>
+    <utilityBar>LIAGA_UtilityBar</utilityBar>
 </CustomApplication>
