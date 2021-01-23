@@ -5,6 +5,10 @@
         <name>ApexClass</name>
 	</types>
 	<types>
+		<members>Quests</members>
+		<name>CustomApplication</name>
+	</types>
+	<types>
 		<members>Quest__c.Complete__c</members>
 		<members>Quest__c.Status__c</members>
 		<members>Quest__c.Titel__c</members>
@@ -13,6 +17,10 @@
 	<types>
 		<members>Quest__c</members>
 		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>Quests</members>
+		<name>CustomTab</name>
 	</types>
 	<types>
 		<members>questlist</members>
