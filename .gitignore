@@ -1,4 +1,6 @@
+.localdevserver
 .project
 .settings
+.sfdx
 salesforce.schema
 Referenced Packages
