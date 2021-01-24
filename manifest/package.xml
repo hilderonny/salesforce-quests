@@ -10,7 +10,6 @@
 	</types>
 	<types>
 		<members>Quest__c.Complete__c</members>
-		<members>Quest__c.Status__c</members>
 		<members>Quest__c.Titel__c</members>
 		<name>CustomField</name>
 	</types>
