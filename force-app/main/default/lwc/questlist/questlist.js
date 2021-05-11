@@ -1,27 +1,22 @@
 import { LightningElement, wire } from 'lwc';
-import { getListUi } from 'lightning/uiListApi'; // https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_get_list_ui
-import QUEST_OBJECT from '@salesforce/schema/Quest__c';
-import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { updateRecord } from 'lightning/uiRecordApi';
+import getAllQuests from '@salesforce/apex/QuestController.getAllQuests';
 import { refreshApex } from '@salesforce/apex';
 
 export default class Questlist extends LightningElement {
 
     quests;
-    questsData;
+    wiredQuests;
     
-    @wire(getListUi, { objectApiName: QUEST_OBJECT, listViewApiName: 'All' })
-    questListView({ error, data }) {
-        console.log(error, data);
-        if (data) {
-            this.questsData = data.records;
-            this.quests = data.records.records;
+    @wire(getAllQuests)
+    questList(result) {
+        this.wiredQuests = result;
+        if (result.data) {
+            this.quests = result.data;
         }
     };
 
-    handleQuestCreated(event) {
-        console.log(event);
-        this.quests.push(event.detail);
+    handleQuestCreated() {
+        refreshApex(this.wiredQuests);
     }
 
     handleTileCompleteClick(event) {

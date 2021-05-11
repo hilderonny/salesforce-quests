@@ -18,12 +18,11 @@ export default class Addquestinput extends LightningElement {
         fields[COMPLETE_FIELD.fieldApiName] = false;
         const recordInput = { apiName: QUEST_OBJECT.objectApiName, fields };
         createRecord(recordInput).then(quest => {
-            console.log(quest);
-            // Empty input field
-            input.value = '';
             // Inform list
             const event = new CustomEvent('questcreated', { detail: quest });
             this.dispatchEvent(event);
+            // Empty input field
+            input.value = '';
         });
     }
 
