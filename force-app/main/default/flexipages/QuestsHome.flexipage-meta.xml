@@ -21,7 +21,7 @@
         <name>right</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Quests Home</masterLabel>
+    <masterLabel>Quests</masterLabel>
     <template>
         <name>home:desktopTemplateHeaderThreeColumns</name>
     </template>

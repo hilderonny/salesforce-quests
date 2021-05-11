@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Spielt LIAGA</description>
-    <applicationVisibilities>
-        <application>LIAGA</application>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <classAccesses>
-      <apexClass>QuestController</apexClass>
-      <enabled>true</enabled>
-    </classAccesses>
+    <description>Creates and solves Quests</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Quest__c.Complete__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <hasActivationRequired>false</hasActivationRequired>
-    <label>LIAGA Player</label>
+    <label>Quest Player</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <viewAllRecords>true</viewAllRecords>
-        <modifyAllRecords>true</modifyAllRecords>
         <object>Quest__c</object>
     </objectPermissions>
     <tabSettings>

@@ -1,7 +1,9 @@
 <template>
 
+	<c-addquestinput onquestcreated={handleQuestCreated}></c-addquestinput>
+
 	<div class="slds-grid slds-gutters slds-wrap">
-		<template for:each={quests.data} for:item='quest'>
+		<template for:each={quests} for:item="quest">
 			<c-questlistitem quest={quest} key={quest.Id} oncompleteclick={handleTileCompleteClick} class="slds-col slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_3-of-12 slds-m-vertical_x-small"></c-questlistitem>
 		</template>
 	</div>

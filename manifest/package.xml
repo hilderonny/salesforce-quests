@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
-		<members>QuestController</members>
-        <name>ApexClass</name>
-	</types>
-	<types>
-		<members>LIAGA</members>
-		<name>CustomApplication</name>
-	</types>
-	<types>
 		<members>Quest__c.Complete__c</members>
-		<members>Quest__c.Titel__c</members>
+		<members>Quest__c.Title__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
@@ -22,17 +14,17 @@
 		<name>CustomTab</name>
 	</types>
 	<types>
-		<members>LIAGA_UtilityBar</members>
 		<members>QuestsHome</members>
 		<name>FlexiPage</name>
 	</types>
 	<types>
+		<members>addquestinput</members>
 		<members>questlist</members>
 		<members>questlistitem</members>
 		<name>LightningComponentBundle</name>
 	</types>
 	<types>
-		<members>LIAGA_Player</members>
+		<members>QuestPlayer</members>
 		<name>PermissionSet</name>
 	</types>
 	<version>50.0</version>

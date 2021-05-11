@@ -3,9 +3,9 @@
     <lightning-card>
         <h3 slot="title">
             <span class="slds-m-right_x-small">
-                <lightning-button-icon-stateful icon-name="utility:check" selected={quest.Complete__c} onclick={handleCompleteButtonClick} alternative-text="Abhaken"></lightning-button-icon-stateful>
+                <lightning-button-icon-stateful icon-name="utility:check" selected={quest.fields.Complete__c.value} onclick={handleCompleteButtonClick}></lightning-button-icon-stateful>
             </span>
-            {quest.Titel__c}
+            {quest.fields.Name.value}
         </h3>
         <div slot="footer">
         </div>
