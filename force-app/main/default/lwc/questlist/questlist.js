@@ -1,7 +1,9 @@
 import { LightningElement, wire } from 'lwc';
 import getAllQuests from '@salesforce/apex/QuestController.getAllQuests';
 import { updateRecord } from 'lightning/uiRecordApi';
+import { deleteRecord } from 'lightning/uiRecordApi';
 import { refreshApex } from '@salesforce/apex';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class Questlist extends LightningElement {
 
@@ -20,7 +22,7 @@ export default class Questlist extends LightningElement {
         refreshApex(this.wiredQuests);
     }
 
-    handleTileCompleteClick(event) {
+    async handleTileCompleteClick(event) {
         const quest = event.detail;
         const tile = event.target;
         quest.Complete__c = !quest.Complete__c;
@@ -28,9 +30,21 @@ export default class Questlist extends LightningElement {
             Id: quest.Id,
             Complete__c: quest.Complete__c
         } };
-        updateRecord(record).then(() => {
-            refreshApex(this.wiredQuests);
-        });
+        await updateRecord(record);
+        refreshApex(this.wiredQuests);
+    }
+
+    async handleTileDeleteQuest(event) {
+        const quest = event.detail;
+        await deleteRecord(quest.Id);
+        this.dispatchEvent(
+            new ShowToastEvent({
+                title: 'Success',
+                message: 'Quest deleted',
+                variant: 'success'
+            })
+        );
+        refreshApex(this.wiredQuests);
     }
 
 }

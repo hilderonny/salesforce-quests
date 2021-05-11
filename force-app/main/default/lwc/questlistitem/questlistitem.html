@@ -7,9 +7,14 @@
             </span>
             {quest.Name}
         </h3>
-        <div slot="footer">
-        </div>
-        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+
+        <lightning-button-menu variant="border-filled" menu-alignment="right" slot="actions" onselect={handleMenuSelect}>
+            <lightning-menu-item value="edit" label="Edit" prefix-icon-name="utility:edit"></lightning-menu-item>
+            <lightning-menu-item value="delete" label="Delete" prefix-icon-name="utility:delete"></lightning-menu-item>
+        </lightning-button-menu>
+
+        <p class="slds-p-horizontal_small">Quest content</p>
+
     </lightning-card>
 
 </template>
