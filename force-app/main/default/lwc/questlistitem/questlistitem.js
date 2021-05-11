@@ -14,8 +14,14 @@ export default class Questlistitem extends LightningElement {
 
     handleMenuSelect(event) {
         switch(event.detail.value) {
+            case 'edit': this.handleEdit(); break;
             case 'delete': this.handleDelete(); break;
         }
+    }
+
+    handleEdit() {
+        const event = new CustomEvent('editquest', { detail: this.quest });
+        this.dispatchEvent(event);
     }
 
     handleDelete() {
@@ -24,6 +30,6 @@ export default class Questlistitem extends LightningElement {
             const event = new CustomEvent('deletequest', { detail: this.quest });
             this.dispatchEvent(event);
         }
-   }
+    }
       
 }

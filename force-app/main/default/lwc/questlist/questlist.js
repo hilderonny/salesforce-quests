@@ -4,8 +4,9 @@ import { updateRecord } from 'lightning/uiRecordApi';
 import { deleteRecord } from 'lightning/uiRecordApi';
 import { refreshApex } from '@salesforce/apex';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+import { NavigationMixin } from "lightning/navigation";
 
-export default class Questlist extends LightningElement {
+export default class Questlist extends NavigationMixin(LightningElement) {
 
     quests;
     wiredQuests;
@@ -45,6 +46,20 @@ export default class Questlist extends LightningElement {
             })
         );
         refreshApex(this.wiredQuests);
+    }
+
+    handleTileEditQuest(event) {
+        // Das Editieren im modalen Dialog geht zwar, man bekommt hinterher aber kein Callback, sodass man die Seite refreshen könnte.
+        // Geht einfach nicht, höchstens mit Triggern und Plattform Events.
+        // Am Besten modalen Dialog als Unterkomponente selber bauen und auf Close-Button reagieren.
+        const quest = event.detail;
+        this[NavigationMixin.Navigate]({
+            type: 'standard__recordPage',
+            attributes: {
+                recordId: quest.Id,
+                actionName: 'edit'
+            },
+        });
     }
 
 }
